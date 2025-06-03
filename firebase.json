@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "blog",  
+    "site": "hugofus",  
     "public": "public",
     "ignore": [
       "firebase.json",
