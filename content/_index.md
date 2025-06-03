@@ -32,7 +32,7 @@ sections:
       background:
         color: ""
         image:
-          filename: "hero-background.webp"  # 您需要在 assets/media/ 添加一张适合的背景图
+          filename: "/hero-background.webp"  # 您需要在 assets/media/ 添加一张适合的背景图
           filters:
             brightness: 0.7
 
