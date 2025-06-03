@@ -5,3 +5,5 @@ hugo_stats.json
 resources/
 public/
 jsconfig.json
+go.sum
+node_modules/
