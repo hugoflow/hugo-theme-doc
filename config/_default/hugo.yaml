@@ -1,0 +1,108 @@
+# Configuration of Hugo
+# Guide: https://docs.hugoblox.com/tutorial/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+title: "Hugo Docs" # Website name
+baseURL: 'https://example.com/' # Website URL
+
+############################
+## PAGE OPTIONS
+############################
+
+cascade:
+  # Docs folder options
+  - _target:
+      path: /docs/**
+    editable: true
+    show_breadcrumb: true
+    # Hide date from Next In Series
+    show_date: false
+    # Show date modified at end of content
+    show_date_updated: true
+  # Blog post options
+  - _target:
+      path: /blog/**
+      kind: page
+    pager: true
+    editable: true
+    hide_date: false
+    show_date_updated: true
+    reading_time: true
+    commentable: true
+    show_related: true
+    share: true
+    # Just use Breadcrumb for navigation on blog post pages?
+    show_breadcrumb: false
+    header:
+      navbar:
+        enable: true
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+############################
+## ADVANCED
+############################
+
+build:
+  writeStats: true
+enableGitInfo: false
+summaryLength: 30
+pagination:
+  pagerSize: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: <sup>^</sup>
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+enableInlineShortcodes: true
+permalinks:
+  authors: '/author/:slug/'
+  tags: '/tag/:slug/'
+  categories: '/category/:slug/'
+disableAliases: true
+
+outputs: # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 修改这里
+  home: [HTML, RSS, WebAppManifest, headers, redirects, backlinks, SearchIndex] # 添加 SearchIndex
+  page: [HTML, SearchIndex] # 添加 SearchIndex (这将应用于所有单个页面，包括博客文章和文档页)
+  section: [HTML, RSS, SearchIndex] # 添加 SearchIndex (这将应用于区段列表页，如 /blog/, /docs/)
+
+outputFormats: # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 添加这个部分
+  SearchIndex:
+    mediaType: "application/json" # Pagefind 通常处理 JSON 或其自己的二进制格式
+    baseName: "_pagefind" # 或者 "searchindex", "idx" - 主题可能期望特定名称，_pagefind 是 Pagefind CLI 的默认
+    isPlainText: false      # 对于 Pagefind 生成的 bundle 可能是 false，如果只是简单 JSON 列表可以是 true
+    notAlternative: true    # 表示这不是一个替代格式，而是附加的
+
+imaging:
+  resampleFilter: lanczos
+  quality: 85
+  anchor: smart
+timeout: 600000
+taxonomies:
+  tag: tags
+  category: categories
+  author: authors
+markup:
+  _merge: deep
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 70
+security:
+  _merge: deep
+sitemap:
+  _merge: deep
+minify:
+  _merge: deep

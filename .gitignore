@@ -1,0 +1,7 @@
+# IDEs
+.idea/
+hugo_stats.json
+# Hugo
+resources/
+public/
+jsconfig.json

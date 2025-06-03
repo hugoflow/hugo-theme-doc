@@ -1,0 +1,9 @@
+# 创建文档页面
+hugo new --kind docs docs/quick-start.md
+
+# 创建博客文章
+hugo new --kind posts posts/my-first-post.md
+
+# 创建项目条目
+hugo new --kind projects projects/my-ai-app.md
+若省略 --kind，会使用 default.md 模板。

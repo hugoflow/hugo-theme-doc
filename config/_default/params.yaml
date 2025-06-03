@@ -1,0 +1,81 @@
+# SITE SETUP
+# Guide: https://
+# Documentation: https://
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+# Appearance
+appearance:
+  mode: light
+  color: blue
+
+# SEO
+marketing:
+  seo:
+    site_type: Project
+    local_business_type: ''
+    org_name: ''
+    description: 'A documentation  by Hugo .'
+    twitter: 'GetResearchDev'
+  analytics:
+    google_analytics: ''
+    google_tag_manager: ''
+    microsoft_clarity: ''
+    baidu_tongji: ''
+    plausible: ''
+    fathom: ''
+    pirsch: ''
+  verification:
+    google: ''
+    baidu: ''
+
+# Site header
+header:
+  navbar:
+    enable: true
+    blox: "navbar"
+    align: "center"
+    fixed_to_top: true
+    logo:
+      text: ""
+      # Logo filename in `assets/media/` folder
+      filename: "logo.svg"
+    button:
+      enable: false
+      text: "Get Started"
+      url: "https://hugo.com/"
+    show_search: true
+    show_theme_chooser: true
+
+# Site footer
+footer:
+  copyright:
+    notice: '© {year} AI探索者。内容归作者所有。'
+    license:
+      enable: true
+      allow_derivatives: false
+      share_alike: true
+      allow_commercial: false
+
+# Localization
+locale:
+  date_format: 'Jan 2, 2006'
+  time_format: '3:04 PM'
+
+# Site features
+features:
+  math:
+    enable: false
+  privacy_pack:
+    enable: false
+
+  feedback:
+    responses:
+      positive: 'Glad to hear it! [Any ideas for improvements?](https://github.com/<USERNAME>/<REPO>/issues/new).'
+      negative: 'Sorry to hear that. [Please tell us how we can improve](https://github.com/<USERNAME>/<REPO>/issues/new).'
+  comment:
+    provider: ''
+    giscus:
+      repo: ''
+      repo_id: ''
+      category: ''
+      category_id: ''
