@@ -9,7 +9,8 @@ design:
 sections:
   - block: hero
     content:
-      title: "打造完美的 Hugo 静态网站"
+      title: |
+        <span class="text-3xl sm:text-4xl md:text-5xl">打造完美的 Hugo 静态网站</span>
       text: "专注分享 Hugo 主题教程与静态博客部署实践，让建站变得简单有趣 ⚡️"
       primary_action:
         text: "开始探索"
@@ -46,7 +47,7 @@ sections:
           description: |
             建站技巧  
             实战分享
-        - statistic: "24/7"
+        - statistic: "25/6"
           description: |
             持续更新  
             技术支持
