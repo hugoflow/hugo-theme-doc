@@ -7,3 +7,4 @@ public/
 jsconfig.json
 go.sum
 node_modules/
+package-lock.json
