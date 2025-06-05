@@ -1,6 +1,6 @@
 module github.com/HugoBlox/theme-documentation
 
-go 1.15
+go 1.20
 
 require (
 	github.com/HugoBlox/hugo-blox-builder/modules/blox-analytics v0.1.3 // indirect

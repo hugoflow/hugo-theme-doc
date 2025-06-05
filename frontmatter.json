@@ -6,8 +6,12 @@
       "title": "content"
     },
     {
-      "title": "content",
-      "path": "[[workspace]]/content"
+      "path": "[[workspace]]/content/blog",
+      "title": "blog"
+    },
+    {
+      "path": "[[workspace]]/content/docs",
+      "title": "docs"
     },
     {
       "title": "showcase",
@@ -17,5 +21,58 @@
   "frontMatter.content.publicFolder": "static",
   "frontMatter.framework.id": "hugo",
   "frontMatter.git.enabled": true,
-  "frontMatter.preview.host": "http://localhost:1313"
+  "frontMatter.preview.host": "http://localhost:1313",
+  "frontMatter.taxonomy.fieldGroups": [
+    {
+      "id": "cascade_group",
+      "fields": [
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "show_breadcrumb",
+          "name": "show_breadcrumb",
+          "type": "boolean"
+        },
+        {
+          "title": "show_toc",
+          "name": "show_toc",
+          "type": "boolean"
+        }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "linkTitle",
+          "name": "linkTitle",
+          "type": "string"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "cascade",
+          "name": "cascade",
+          "type": "block",
+          "fieldGroup": [
+            "cascade_group"
+          ]
+        }
+      ]
+    }
+  ]
 }
