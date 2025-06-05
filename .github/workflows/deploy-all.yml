@@ -78,9 +78,12 @@ jobs:
     runs-on: ubuntu-latest
     # 设置环境变量，Vercel CLI 会优先使用它们
     env:
-      VERCEL_TOKEN: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel_token }}
-      VERCEL_PROJECT_ID: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel_projectId }}
-      VERCEL_ORG_ID: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel_orgId }}
+      # 从 secrets 中获取 Vercel 的相关信息
+      # 注意：确保 secrets.DEPLOY_SECRETS_JSON 已经包含了 vercel 的相关信息
+
+      VERCEL_TOKEN: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel.vercel_token }}
+      VERCEL_PROJECT_ID: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel.vercel_projectId }}
+      VERCEL_ORG_ID: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel.vercel_orgId }}
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4 # 建议使用最新版 v4
