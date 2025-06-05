@@ -104,5 +104,5 @@ jobs:
         run: |
           echo "Deploying to Vercel Project: $VERCEL_PROJECT_ID under Org/User: $VERCEL_ORG_ID"
 
-          vercel deploy --prebuilt --prod --yes ./public --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID"
+          vercel deploy --prod --yes ./public --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID"
 
