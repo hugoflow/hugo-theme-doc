@@ -100,15 +100,6 @@ jobs:
         # Vercel CLI 会自动使用 VERCEL_TOKEN, VERCEL_PROJECT_ID, VERCEL_ORG_ID 环境变量
         run: |
           echo "Deploying to Vercel Project: $VERCEL_PROJECT_ID under Org/User: $VERCEL_ORG_ID"
-          # 使用 ./public 作为要部署的目录
-          # --yes 用于自动确认
-          # --prod 用于部署到生产环境
-          # --prebuilt 因为我们已经构建好了
-          vercel deploy --prebuilt --prod --yes ./public
-          # Token, Project ID, 和 Org ID 会从环境变量中读取
-          # 如果环境变量没有被 CLI 自动识别，或者你想更明确，可以这样：
-          # vercel deploy --prebuilt --prod --yes ./public --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID"
-          # 注意：Vercel CLI 通常会优先使用 VERCEL_PROJECT_ID 环境变量来链接项目，
-          # 所以不需要在 deploy 命令中显式传递 project_id 参数。
 
- 
+          vercel deploy --prebuilt --prod --yes ./public --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID"
+
