@@ -47,6 +47,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout project source # <--- 添加这一步
+        uses: actions/checkout@v4
+        
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
@@ -73,9 +76,9 @@ jobs:
     runs-on: ubuntu-latest
     # 设置环境变量，Vercel CLI 会优先使用它们
     env:
-      VERCEL_TOKEN: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel_token }}
-      VERCEL_PROJECT_ID: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel_project_id }}
-      VERCEL_ORG_ID: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel_org_id }}
+      VERCEL_TOKEN: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON)vercel.vercel_token }}
+      VERCEL_PROJECT_ID: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel.vercel_project_id }}
+      VERCEL_ORG_ID: ${{ fromJson(secrets.DEPLOY_SECRETS_JSON).vercel.vercel_org_id }}
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4 # 建议使用最新版 v4
