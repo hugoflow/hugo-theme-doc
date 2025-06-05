@@ -100,7 +100,7 @@ jobs:
         run: npm install --global vercel@latest # 安装最新版 Vercel CLI
 
       - name: Deploy to Vercel Production
-        # Vercel CLI 会自动使用 VERCEL_TOKEN, VERCEL_PROJECT_ID, VERCEL_ORG_ID 环境变量
+        # Vercel CLI会自动使用 VERCEL_TOKEN, VERCEL_PROJECT_ID, VERCEL_ORG_ID 环境变量
         run: |
           echo "Deploying to Vercel Project: $VERCEL_PROJECT_ID under Org/User: $VERCEL_ORG_ID"
 
